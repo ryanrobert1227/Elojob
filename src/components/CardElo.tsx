@@ -4,7 +4,7 @@ import { chooseElo } from '../utils/chooseElo';
 
 import { EloType } from '../types/Eloobject';
 
-import Prata from "../assets/prata_III.webp"
+import Prata from "../assets/Season_2023_-_Silver.webp"
 
 interface PropsType {
   Elo: EloType

@@ -1,10 +1,10 @@
-import Ferro from "../assets/ferro_IV.webp"
-import Bronze from "../assets/bronze_IV.webp"
-import Prata from "../assets/prata_III.webp"
-import Gold from "../assets/ouro_IV.webp"
-import Platina from "../assets/platina_IV.webp"
-import Esmeralda from "../assets/esmeralda_IV.webp"
-import Diamante from "../assets/diamante_IV.webp"
+import Ferro from "../assets/Season_2023_-_Iron.webp"
+import Bronze from "../assets/Season_2023_-_Bronze.webp"
+import Prata from "../assets/Season_2023_-_Silver.webp"
+import Gold from "../assets/Season_2023_-_Gold.webp"
+import Platina from "../assets/Season_2023_-_Platinum.webp"
+import Esmeralda from "../assets/Season_2023_-_Emerald.webp"
+import Diamante from "../assets/Season_2023_-_Diamond.webp"
 
 export function chooseElo(elo: string) {
   switch(elo) {
