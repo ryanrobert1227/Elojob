@@ -21,7 +21,7 @@ export function validateCalculator(current: EloType, wished: EloType, format: st
  
   if (convertEloToNumber(current.tier) + reverseDivision(current.division) >= convertEloToNumber(wished.tier) + reverseDivision(wished.division)) return "O Elo desejado dever ser maior do que o elo atual!"
 
-  if (convertEloToNumber(wished.tier) + Number(wished.division) > 26) return "Desculpe, No momento subimos contas apenas até Diamante IV"
+  if (convertEloToNumber(wished.tier) + reverseDivision(wished.division) > 25) return "Desculpe, No momento subimos contas apenas até Diamante IV"
 
   return ""
 }
