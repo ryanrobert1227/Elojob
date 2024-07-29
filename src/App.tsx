@@ -53,7 +53,7 @@ function App() {
       backgroundSize="cover"
       height="100vh"
       width="100vw">
-        <Flex alignItems="center" justifyContent={["space-evenly", "center"]} gap={[0, "1.4rem", "2rem", "4rem", "2rem"]} position="fixed" top="0" width="100%" height={["12%", "12%", "12%", "12%", "15%"]} padding="0 2rem" backgroundColor="#121624" color="white">
+        <Flex alignItems="center" justifyContent={["space-evenly", "center"]} gap={[0, "1.4rem", "2rem", "4rem", "2rem"]} position="fixed" top="0" width="100%" height={["12%", "12%", "12%", "12%", "15%"]} padding="0 2rem" backgroundColor="rgba(18, 22, 36, 0.6)" color="white" >
           <Text fontSize={["1.4rem", "1.6rem", "2.2rem", "3rem", "3rem"]} fontWeight={600} letterSpacing="0.1rem">ELOJOB COM O TATU</Text>
           <Link width={["7%", "6%", "4%", "4%", ""]} href="https://api.whatsapp.com/send/?phone=5571992490906&text&type=phone_number&app_absent=0" target="_blank"><FaWhatsapp size="100%" /></Link>
         </Flex>
@@ -73,7 +73,7 @@ function App() {
               <CardElo Elo={currentElo} setElo={setCurrentElo} setError={setError} text="Elo Atual"/>
               <CardElo Elo={wishedElo} setElo={setWishedElo} setError={setError} text="Elo Desejado" />
               <Flex justifyContent="space-evenly" position="relative" height="15%" width="100%" p={["0", "0 4%", "0 5%", "0 7.7%", "0 6%"]} pt={["10%", "3.5%", "4%", "2%", "2%"]} pb={["0%", "0%", "0%", "0%", "1%"]}>
-                {error && <Text position="absolute" top={["-40%", "-20%", "-15%", "-25%", "-15%"]} color="red" fontFamily="sans-serif" fontSize={["1.2rem", "1rem", "1.3rem", "1.2rem", "1.4rem"]} textAlign="center" lineHeight="1.5rem"> { error } </Text>}
+                {error && <Text position="absolute" top={["-40%", "-20%", "-15%", "-25%", "-15%"]} color="#d84747" fontFamily="sans-serif" fontSize={["1.2rem", "1rem", "1.3rem", "1.2rem", "1.4rem"]} textAlign="center" lineHeight="1.5rem"> { error } </Text>}
                 <Flex justifyContent="center" width="45%" p="0" onClick={resetSelectAndBackToHome}><GeneralButton text="Voltar" /></Flex>
                 <Flex justifyContent="center" width="45%" p="0" onClick={clickCalcular}><GeneralButton text="Calcular" /></Flex>
               </Flex> 
