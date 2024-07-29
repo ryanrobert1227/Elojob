@@ -28,6 +28,13 @@ function App() {
     }
     }
 
+  function resetSelectAndBackToHome() {
+    setCurrentElo({tier: "", division: ""})
+    setWishedElo({tier: "", division: ""})
+    setStage(0)
+    return
+  }
+
   function redirect() {
     return window.open("https://api.whatsapp.com/send/?phone=5571992490906&text&type=phone_number&app_absent=0", "_blank")
   }
@@ -67,7 +74,7 @@ function App() {
               <CardElo Elo={wishedElo} setElo={setWishedElo} setError={setError} text="Elo Desejado" />
               <Flex justifyContent="space-evenly" position="relative" height="15%" width="100%" p={["0", "0 4%", "0 5%", "0 7.7%", "0 6%"]} pt={["10%", "3.5%", "4%", "2%", "2%"]} pb={["0%", "0%", "0%", "0%", "1%"]}>
                 {error && <Text position="absolute" top={["-40%", "-20%", "-15%", "-25%", "-15%"]} color="red" fontFamily="sans-serif" fontSize={["1.2rem", "1rem", "1.3rem", "1.2rem", "1.4rem"]} textAlign="center" lineHeight="1.5rem"> { error } </Text>}
-                <Flex justifyContent="center" width="45%" p="0" onClick={() => setStage(0)}><GeneralButton text="Voltar" /></Flex>
+                <Flex justifyContent="center" width="45%" p="0" onClick={resetSelectAndBackToHome}><GeneralButton text="Voltar" /></Flex>
                 <Flex justifyContent="center" width="45%" p="0" onClick={clickCalcular}><GeneralButton text="Calcular" /></Flex>
               </Flex> 
             </Flex>
@@ -84,7 +91,7 @@ function App() {
                   <Text pb={["15%", "","","","5%"]} fontFamily="sans-serif" fontWeight="600" fontSize="2.5rem" color="#3ebd07">R$ {calculator(currentElo, wishedElo, "elojob").toFixed(2).replace(".", ",")}</Text>
                 </Flex>
                 <Flex justifyContent="space-evenly" height="10%" width="100%">
-                  <Flex justifyContent="center" width="48%" p="0" onClick={() => setStage(0)}><GeneralButton text="Voltar ao Inicio" /></Flex>
+                  <Flex justifyContent="center" width="48%" p="0" onClick={resetSelectAndBackToHome}><GeneralButton text="Voltar ao Inicio" /></Flex>
                   <Flex justifyContent="center" width="48%" p="0" onClick={redirect}><GeneralButton text="Contratar" /></Flex>
                 </Flex> 
               </Flex>
