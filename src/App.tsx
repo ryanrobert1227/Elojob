@@ -98,8 +98,8 @@ function App() {
             </>
           }
         </Flex>
-        <Flex alignItems="center" justifyContent="space-evenly" position="fixed" bottom="0" width="100%" height="6%" padding="0.5rem 1rem" backgroundColor="#121624" color="white">
-          <Text  fontFamily="sans-serif" fontSize="1rem" fontWeight={600} letterSpacing="0.1rem" color="#c9c9c9">SITE EM BETA - EM CASO DE ERRO ENTRE EM CONTATO OU TENTE ABRIR DENOVO</Text> 
+        <Flex alignItems="center" justifyContent="space-evenly" position="fixed" bottom="0" width="100%" height={["13%", "10%", "8%", "8%", "8%"]} padding={["0.5rem 1rem", "0.5rem 5rem", "0.5rem 8rem", "0.5rem 1rem", ""]} backgroundColor="#121624" color="white">
+          <Text textAlign="center" fontFamily="sans-serif" fontSize={["1rem", "1rem", "1.3rem", "1rem", "1.5rem"]} fontWeight={600} letterSpacing="0.1rem" color="#c9c9c9">SITE EM BETA - EM CASO DE ERRO ENTRE EM CONTATO OU TENTE ABRIR DENOVO</Text> 
         </Flex>
       </Flex>
     </>
