@@ -35,8 +35,13 @@ function App() {
     return
   }
 
-  function redirect() {
-    return window.open("https://api.whatsapp.com/send/?phone=5571992490906&text&type=phone_number&app_absent=0", "_blank")
+  function redirect(msg?: string) {
+
+    if (msg) {
+      return window.open(`https://api.whatsapp.com/send/?phone=5571992490906&text=${msg.replaceAll(" ", "%20").replaceAll("\n", "%0A")}&type=phone_number&app_absent=0`, "_blank")
+    } else {
+      return window.open("https://api.whatsapp.com/send/?phone=5571992490906&text&type=phone_number&app_absent=0", "_blank")
+    }
   }
 
 
@@ -55,7 +60,7 @@ function App() {
       width="100vw">
         <Flex alignItems="center" justifyContent={["space-evenly", "center"]} gap={[0, "1.4rem", "2rem", "4rem", "2rem"]} position="fixed" top="0" width="100%" height={["12%", "12%", "12%", "12%", "15%"]} padding="0 2rem" backgroundColor="rgba(18, 22, 36, 0.6)" color="white" >
           <Text fontSize={["1.4rem", "1.6rem", "2.2rem", "3rem", "3rem"]} fontWeight={600} letterSpacing="0.1rem">ELOJOB COM O TATU</Text>
-          <Link width={["7%", "6%", "4%", "4%", ""]} href="https://api.whatsapp.com/send/?phone=5571992490906&text&type=phone_number&app_absent=0" target="_blank"><FaWhatsapp size="100%" /></Link>
+          <Link width={["7%", "6%", "4%", "4%", ""]} target="_blank" onClick={() => redirect()}><FaWhatsapp size="100%" /></Link>
         </Flex>
         <Flex flexDirection="column" justifyContent="space-evenly" alignItems="center" mt="3%" width={["80%", "70", "68%", "65%", "60%"]} height={["60%", "63%", "66%", "72%", "72%"]} padding="1rem 0.8rem rem 0.8rem" borderRadius="1rem" boxShadow="-0.6rem 1rem 0.7rem rgba(0, 0, 0, 0.4)" background="#313338" >
           {stage === 0 && 
@@ -92,7 +97,7 @@ function App() {
                 </Flex>
                 <Flex justifyContent="space-evenly" height="10%" width="100%">
                   <Flex justifyContent="center" width="48%" p="0" onClick={resetSelectAndBackToHome}><GeneralButton text="Voltar ao Inicio" /></Flex>
-                  <Flex justifyContent="center" width="48%" p="0" onClick={redirect}><GeneralButton text="Contratar" /></Flex>
+                  <Flex justifyContent="center" width="48%" p="0" onClick={() => redirect(`Olá, Tenho interesse no Serviço de EloJob.\nMeu elo atual é: ${currentElo.tier + " " + currentElo.division}\nMeu objetivo é alcançar o ${wishedElo.tier + " " + wishedElo.division}\nValor calculado foi de: R$ ${calculator(currentElo, wishedElo, "elojob").toFixed(2).replace(".", ",")}`)}><GeneralButton text="Contratar" /></Flex>
                 </Flex> 
               </Flex>
             </>
