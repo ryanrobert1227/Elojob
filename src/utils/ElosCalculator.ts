@@ -5,7 +5,7 @@ export function calculator(current: EloType, wished: EloType, format: string) {
 
   let valor: number[] = []
   if (format === "elojob") {
-      valor = [5.5, 5.5, 5.5, 5.5, 6.5, 6.5, 6.5, 6.5, 9, 9, 9, 9, 12, 12, 12, 12, 16.5, 16.5, 16.5, 16.5, 32.5, 32.5, 32.5, 32.5]
+      valor = [7, 7, 7, 7, 9, 9, 9, 9, 11, 11, 11, 11, 15, 15, 15, 15, 20, 20, 20, 20, 32.5, 32.5, 32.5, 32.5]
   }
   
   valor.splice(convertEloToNumber(wished.tier) + reverseDivision(wished.division) - 1, valor.length) // remover valores finais
